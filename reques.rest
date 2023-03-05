@@ -1,4 +1,4 @@
-POST https://nadastestert.onrender.com/api/parties/
+POST https://nadastestert.onrender.com/api/parties
 Content-Type: application/json
 
 {
