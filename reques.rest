@@ -1,0 +1,12 @@
+POST https://nadastestert.onrender.com/api/parties/
+Content-Type: application/json
+
+{
+   "title": "teste",
+   "authot": "eu",
+   "description": "teste nada",
+   "budget": 1000
+}
+
+###
+GET https://nadastestert.onrender.com/api/parties/
