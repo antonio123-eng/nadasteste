@@ -10,7 +10,7 @@ export const createParty = async(req, res) => {
       author: req.body.author,
       description: req.body.description,
       budget: req.body.budget,
-      image: file.path
+      image: file.filename
    }
 
    const response = await Party.create(party)
