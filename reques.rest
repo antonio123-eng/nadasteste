@@ -2,10 +2,10 @@ POST https://nadastestert.onrender.com/api/parties
 Content-Type: application/json
 
 {
-   "title": "teste",
-   "authot": "eu",
-   "description": "teste nada",
-   "budget": 1000
+   "title": "Festa legal",
+   "authot": "Patricio",
+   "description": "Minha festa",
+   "budget": 5000
 }
 
 ###

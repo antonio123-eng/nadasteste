@@ -2,12 +2,15 @@ import Party from "../models/Party.js"
 
 export const createParty = async(req, res) => {
 
+   const file = req.file
+   //req.file.mimetype: image/png
+   // req.route.path = /parties
    const party = {
       title: req.body.title,
-      authot: req.body.authot,
+      author: req.body.author,
       description: req.body.description,
       budget: req.body.budget,
-      // image: req.body.image,
+      image: file.path
    }
 
    const response = await Party.create(party)
@@ -19,7 +22,7 @@ export const createParty = async(req, res) => {
 
 export const getAllParties = async(req, res) => {
 
-   const parties = await Party.find()
+   const parties = await Party.find().sort("-createdAt")
 
    res.json(parties)
 

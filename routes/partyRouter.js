@@ -1,7 +1,9 @@
 import express  from "express";
-import { createParty, getAllParties } from "../controller/partyController.js";
 const router = express.Router()
 
-router.route("/parties").post(createParty).get(getAllParties)
+import { createParty, getAllParties } from "../controller/partyController.js";
+import upload from '../utils/UploadImage.js'
+
+router.route("/parties").post(upload.single("image"), createParty).get(getAllParties)
 
 export default router
