@@ -9,8 +9,6 @@ dotenv.config()
 const app = express()
 connectDB()
 const port = process.env.PORT || 5000
-app.use(express.json())
-
 app.use((req, res, next) => {
    res.header("Access-Control-Allow-Origin", "https://golden-mermaid-01e264.netlify.app/")
    res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE")
@@ -18,6 +16,7 @@ app.use((req, res, next) => {
    app.use(cors())
    next()
 })
+app.use(express.json())
 
 
 app.use("/api", routes)
