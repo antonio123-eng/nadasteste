@@ -5,6 +5,11 @@ import dotenv from 'dotenv'
 import cors from 'cors'
 dotenv.config()
 
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 const app = express()
 app.use((req, res, next) => {
@@ -14,6 +19,8 @@ app.use((req, res, next) => {
    app.use(cors())
    next()
 })
+app.use("/imagens", express.static(path.join(__dirname, "/images")))
+app.use(express.urlencoded({extended: false}))
 connectDB()
 const port = process.env.PORT || 5000
 app.use(express.json())
