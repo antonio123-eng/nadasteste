@@ -19,7 +19,7 @@ app.use((req, res, next) => {
    app.use(cors())
    next()
 })
-app.use("/uploads", express.static(path.join(__dirname, "/uploads")))
+app.use("/files", express.static(path.join(__dirname, "/uploads")))
 app.use(express.urlencoded({extended: false}))
 connectDB()
 const port = process.env.PORT || 5000
