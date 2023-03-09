@@ -4,10 +4,10 @@ export const createParty = async(req, res) => {
 
    //req.file.mimetype: image/png
    // req.route.path = /parties
-   console.log(req.file.filename)
+   console.log(req.file.path)
    const { title, author, description, budget } = req.body
 
-   const image = req.file ? req.file.filename : undefined
+   const image = req.file ? req.file.path : undefined
 
    const party = {
       title, 
