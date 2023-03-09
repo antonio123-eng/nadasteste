@@ -7,7 +7,7 @@ export const createParty = async(req, res) => {
    console.log(req.file.path)
    const { title, author, description, budget } = req.body
 
-   const image = req.file ? req.file.path : undefined
+   const image = req.file ? req.file.filename : undefined
 
    const party = {
       title, 
