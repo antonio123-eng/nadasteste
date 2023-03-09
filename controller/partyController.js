@@ -2,16 +2,21 @@ import Party from "../models/Party.js"
 
 export const createParty = async(req, res) => {
 
-   const file = req.file
    //req.file.mimetype: image/png
    // req.route.path = /parties
+   console.log(req.file.filename)
+   const { title, author, description, budget } = req.body
+
+   const image = req.file ? req.file.filename : undefined
+
    const party = {
-      title: req.body.title,
-      author: req.body.author,
-      description: req.body.description,
-      budget: req.body.budget,
-      image: file.filename
+      title, 
+      author, 
+      description, 
+      budget, 
+      image
    }
+
 
    const response = await Party.create(party)
 
