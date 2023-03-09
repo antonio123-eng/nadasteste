@@ -13,7 +13,7 @@ export const createParty = async(req, res) => {
       title, 
       author, 
       description, 
-      budget, 
+      budget: Number(budget), 
       image
    }
 
