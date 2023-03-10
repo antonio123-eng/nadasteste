@@ -16,12 +16,11 @@ const app = express()
 const port = process.env.PORT || 5000
 
 app.use(cors())
-
+connectDB()
 app.use("/files", express.static(path.join(__dirname, "/uploads")))
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 
-connectDB()
 
 app.use("/api", routes)
 
