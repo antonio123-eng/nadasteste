@@ -15,8 +15,8 @@ console.log(__dirname)
 const app = express()
 app.use(cors())
 app.use("/files", express.static(path.resolve(__dirname, "/uploads")))
+app.use(express.urlencoded({extended: false}))
 app.use(express.json())
-app.use(express.urlencoded({extended: true}))
 connectDB()
 const port = process.env.PORT || 5000
 
