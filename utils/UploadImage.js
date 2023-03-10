@@ -4,9 +4,9 @@ import path from 'path'
 const storage = multer.diskStorage({
    destination: (req, file, cb) => {
       let folder = ""
-      if(req.originalUrl.includes("services")) {
+      if(req.url.includes("services")) {
          folder = "services"
-      } else if(req.originalUrl.includes("parties")) {
+      } else if(req.url.includes("parties")) {
          folder = "parties"
       }
       cb(null, `uploads/${folder}/`)
