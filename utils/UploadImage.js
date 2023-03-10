@@ -9,10 +9,10 @@ const storage = multer.diskStorage({
       } else if(req.originalUrl.includes("parties")) {
          folder = "parties"
       }
-      cb(null, `uploads/${folder}`)
+      cb(null, `uploads/${folder}/`)
    },
    filename: (req, file, cb) => {
-      cb(null, String(Math.floor(Math.random() * 10000)) + Date.now() + path.extname(file.originalname))
+      cb(null, Date.now() + String(Math.floor(Math.random() * 10000)) + path.extname(file.originalname))
    }
 })
 
