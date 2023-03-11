@@ -7,7 +7,7 @@ const partySchema = new mongoose.Schema({
    description: String,
    budget: Number,
    image: {
-      value: String,
+      value: Buffer,
       miType: String
    },
    services: {
