@@ -7,17 +7,19 @@ export const createParty = async(req, res) => {
    console.log(req)
    const { title, author, description, budget } = req.body
    let image
-
    if(req.file) {
-      image = req.file
+      image = req.file.filename
    }
 
    const party = {
       title, 
       author, 
       description, 
-      budget: Number(budget), 
-      image
+      budget, 
+      image: {
+         value: image,
+         miType: req.file.mimetype
+      }
    }
 
    const response = await Party.create(party)

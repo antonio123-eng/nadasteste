@@ -9,12 +9,11 @@ const storage = multer.diskStorage({
       } else if(req.url.includes("parties")) {
          folder = "parties"
       }
-      cb(null, `./uploads/${folder}`)
+      cb(null, `uploads/${folder}`)
    },
    filename: (req, file, cb) => {
       cb(null, Date.now() + String(Math.floor(Math.random() * 10000)) + path.extname(file.originalname))
    }
 })
 
-const upload = multer({storage})
-export default upload
+export const upload = multer({storage})
