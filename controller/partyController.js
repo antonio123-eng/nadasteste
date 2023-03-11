@@ -8,7 +8,7 @@ export const createParty = async(req, res) => {
    const { title, author, description, budget } = req.body
    let image
    if(req.file) {
-      image = req.file.filename
+      image = req.file
    }
 
    const party = {
