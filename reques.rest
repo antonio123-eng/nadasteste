@@ -1,12 +1,12 @@
-POST https://nadastestert.onrender.com/api/parties
-Content-Type: application/json
+# POST https://nadastestert.onrender.com/api/parties
+# Content-Type: application/json
 
-{
-   "title": "Festa legal",
-   "authot": "Patricio",
-   "description": "Minha festa",
-   "budget": 5000
-}
+# {
+#    "title": "Festa legal",
+#    "authot": "Patricio",
+#    "description": "Minha festa",
+#    "budget": 5000
+# }
 
-###
-GET https://nadastestert.onrender.com/api/parties/
+# ###
+# GET https://nadastestert.onrender.com/api/parties/

@@ -9,7 +9,7 @@ export const createParty = async(req, res) => {
    let image
 
    if(req.file) {
-      image = req.file.filename
+      image = req.file
    }
 
    const party = {
