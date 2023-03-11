@@ -16,10 +16,7 @@ export const createParty = async(req, res) => {
       author, 
       description, 
       budget, 
-      image: {
-         value: image,
-         miType: req.file.mimetype
-      }
+      image: image
    }
 
    const response = await Party.create(party)

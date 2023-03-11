@@ -6,10 +6,7 @@ const partySchema = new mongoose.Schema({
    author: String,
    description: String,
    budget: Number,
-   image: {
-      value: Buffer,
-      miType: String
-   },
+   image: String,
    services: {
       type: [serviceSchema]
    }
