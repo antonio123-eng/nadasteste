@@ -1,7 +1,5 @@
 import {Types} from "mongoose"
 import Party from "../models/Party.js"
-import path from 'path'
-import fs from 'fs'
 
 export const createParty = async(req, res) => {
 
@@ -18,11 +16,6 @@ export const createParty = async(req, res) => {
       budget, 
       image: image
    }
-
-   const filePath = path.join("uploads/parties", req.file.filename)
-   fs.writeFile(filePath, req.file.buffer, (err) => {
-      return res.json("Upload concluido com sucesso")
-   })
 
    const response = await Party.create(party)
 
