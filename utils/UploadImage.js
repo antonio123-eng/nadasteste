@@ -14,6 +14,7 @@ const storage = multer.diskStorage({
          folder = "parties"
       }
       cb(null, path.join(__dirname, `../uploads/${folder}`))
+      console.log(path.join(__dirname, `../uploads/${folder}`))
    },
    filename: (req, file, cb) => {
       cb(null, String(Date.now()) + String(Math.floor(Math.random() * 10000)) + path.extname(file.originalname))
