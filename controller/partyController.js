@@ -3,8 +3,6 @@ import Party from "../models/Party.js"
 
 export const createParty = async(req, res) => {
 
-   console.log(req.query.path)
-   console.log(req)
    const { title, author, description, budget } = req.body
    let image
    if(req.file) {
